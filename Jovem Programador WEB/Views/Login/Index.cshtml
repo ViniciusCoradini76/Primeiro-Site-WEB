@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "_LayoutDeslogado";
+}
+
+@if (ViewData["MsgErro"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["MsgErro"]
+    </div>
+}
+@model Login
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tela de login</title>
+    <link href="https://upload.wikimedia.org/wikipedia/commons/8/86/Senac_logo.svg" rel="stylesheet" integrity="sha384-4bw+/aepp/yc94hepvnvgizdgic5+vknbqngchekrqn+ptmohdexuppvndjzqiu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-4 ">
+        <div class="row align-items-center mx-auto col-lg-5">
+
+
+            <form class="p-4 p-md-5 border rounded-3 bg-light" asp-controller="Login" asp-action="BuscarLogin" method="post">
+                <div class="form-floating mb-3">
+                    <input type="usuario" class="form-control" id="inputUsuario" placeholder="Usuario" asp-for="Usuario" />
+                    <label for="inputUsuario" class="form-label">Usuário</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha" asp-for="Senha" />
+                    <label for="inputSenha" class="form-label">Senha</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-secondary" role="button">Entrar</button>
+
+
+            </form>
+
+            <style>
+                body {
+                    background-color: MidnightBlue; /* Substitua com a cor desejada em hexadecimal, RGB ou nome da cor */
+                }
+            </style>
+
+            @*   </div>
+            </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-hwwvtgbno3bzjjlyd8ovxjrbzt8cqvspebns5n7c8ivinixgaoxmnlmubnhbgrkm" crossorigin="anonymous"></script>
+
+            </html>*@
+</body>

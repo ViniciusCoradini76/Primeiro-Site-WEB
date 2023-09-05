@@ -1,0 +1,64 @@
+﻿@if (ViewData["MsgErro"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["MsgErro"]
+        </div>
+}
+@if (ViewData["MsgSucesso"] != null)
+{
+    <div class="alert-success">
+        @ViewData["MsgSucesso"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">Professor</th>
+            <th scope="col">Matéria</th>
+            <th scope="col">Data Nascimento</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td>Maria</td>
+            <td>Português</td>
+            <td>Feminino</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88350-665"> Endereço</a>
+                </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>Paulo</td>
+            <td>Inglês</td>
+            <td>Masculino</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88351-210"> Endereço</a>
+                </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>Leon</td>
+            <td>Artes</td>
+            <td>Masculino</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88351-300"> Endereço</a>
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
