@@ -2,7 +2,287 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Bem vindo</h1>
-    <p>Leia sobre nós <a href="https://www.youtube.com/watch?v=_tWnW1qi8FE">System Education</a>.</p>
+    <h3 class="display-4"><strong> </strong></h3>
 </div>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .slides {
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+        }
+
+            .slide img {
+                width: 100%;
+            }
+
+        .navigation {
+            text-align: center;
+        }
+
+        .carousel {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides">
+        <div class="slide">
+            <img src="https://portal.sc.senac.br/portal/novo/images/carousel-header/large/ensinomedio.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="https://portal.sc.senac.br/portal/novo/images/carousel-header/large/tecnico.png" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="https://portal.sc.senac.br/portal/novo/images/carousel-header/large/faculdade.png" alt="Slide 3">
+        </div>
+    </div>
+    <div class="navigation">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+    </div>
+    <div class="carousel">
+        <div class="buttons">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const radioButtons = document.querySelectorAll('[name="carousel"]');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].style.display = 'none';
+            radioButtons[currentSlide].checked = false;
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.display = 'block';
+            radioButtons[currentSlide].checked = true;
+        }
+
+        // Define um temporizador para alternar automaticamente os slides a cada 4 segundos (4000 ms)
+        const interval = setInterval(nextSlide, 4000);
+
+        for (let i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener('change', function () {
+                slides[currentSlide].style.display = 'none';
+                currentSlide = i;
+                slides[currentSlide].style.display = 'block';
+                clearInterval(interval); // Limpa o temporizador ao clicar em um botão de opção
+            });
+        }
+
+        // Defina o primeiro botão de opção como "selecionado" por padrão
+        radioButtons[0].checked = true;
+        slides[0].style.display = 'block';
+    </script>
+</body>
+</html>
+
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+<!-- Esse <hr> serve para fazer uma linha divisória-->
+<hr>
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+<!-- Primeiro card -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+    <style>
+        .card {
+            width: 300px;
+            max-width: 300px;
+            display: inline-block; /* Adicionado para exibir os cards lado a lado */
+            margin-right: 20px; /* Adicionado espaçamento entre os cards */
+        }
+    </style>
+</head>
+<body>
+    <div class="card text-center">
+        <div class="card-header">
+            Inscrição aberta
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">CURSO LIVRE</h5>
+            <p class="card-text">Excel Intermediário</p>
+            <p class="card-text">Início 28/09/2023</p>
+            <p class="card-text">Senac Joaçaba</p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            <a href="https://portal.sc.senac.br/portal/App/Curso_detalhe_cursos.aspx?codcurso=2848&tipo=1&area_de_atuacao=Informa%C3%A7%C3%A3o%20e%20Comunica%C3%A7%C3%A3o&unidadeid=21&nome_curso_lista=Excel%20Intermedi%C3%A1rio&disponibilidade=disponivel#ancora_registo_interesse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Segundo Card -->
+    <div class="card text-center">
+        <div class="card-header">
+            Inscrição aberta
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">CURSO TÉCNICO</h5>
+            <p class="card-text">Técnico em Enfermagem</p>
+            <p class="card-text">Início 25/09/2023</p>
+            <p class="card-text">Senac Criciúma</p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            <a href="https://portal.sc.senac.br/portal/App/Curso_detalhe_cursos.aspx?codcurso=2133&tipo=6&area_de_atuacao=Ambiente%20e%20Sa%C3%BAde&unidadeid=38&nome_curso_lista=T%C3%A9cnico%20em%20Enfermagem&disponibilidade=disponivel#ancora_registo_interesse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--Terceiro Card-->
+
+<div class="card text-center">
+    <div class="card-header">
+        Inscrição aberta
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">PÓS-GRADUAÇÃO</h5>
+        <p class="card-text">Pós-Graduação em Marketing Digital</p>
+        <p class="card-text">Início 22/09/2023</p>
+        <p class="card-text">Senac Criciúma</p>
+    </div>
+    <div class="card-footer text-body-secondary">
+        <a href="https://portal.sc.senac.br/portal/App/Curso_detalhe_cursos.aspx?codcurso=1249&tipo=10&area_de_atuacao=Gest%C3%A3o%20e%20Neg%C3%B3cios&unidadeid=16&nome_curso_lista=P%C3%B3s-Gradua%C3%A7%C3%A3o%20Lato%20Sensu%20em%20Marketing%20Digital&disponibilidade=disponivel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+<!--Quarto Card-->
+
+<div class="card text-center">
+    <div class="card-header">
+        Inscrição aberta
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">ESPECIALIZAÇÃO TÉCNICA</h5>
+        <p class="card-text">Instrumentação Cirúrgica</p>
+        <p class="card-text">Início 23/09/2023</p>
+        <p class="card-text">Senac Palhoça</p>
+    </div>
+    <div class="card-footer text-body-secondary">
+        <a href="https://portal.sc.senac.br/portal/App/Curso_detalhe_cursos.aspx?codcurso=1785&tipo=96&area_de_atuacao=Ambiente%20e%20Sa%C3%BAde&unidadeid=36&nome_curso_lista=Especializa%C3%A7%C3%A3o%20T%C3%A9cnica%20em%20Instrumenta%C3%A7%C3%A3o%20Cir%C3%BArgica&disponibilidade=disponivel#ancora_registo_interesse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+<!--Mais uma quebra linha-->
+<hr>
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+<style>
+    .text-bg-dark {
+        display: inline-block; /*isso faz com que os elementos -div- fiquem lado a lado */
+        margin-right: 10px; /* Espaçamento entre as imagens (ajuste conforme necessário) */
+    }
+</style>
+
+<!-- Primeira foto -->
+<a href="https://corporativo.sc.senac.br/">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/corporativo.png" width="200">
+</div>
+</a>
+
+<!-- Segunda foto -->
+<a href="https://www.sc.senac.br/ensinomedio/">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/ensinomedio.png" width="200">
+</div>
+</a>
+
+<!-- Terceira foto -->
+<a href="https://portal.sc.senac.br/portal/cursos/livres">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/curso-livre.png" width="200">
+</div>
+</a>
+
+<!-- Quarta foto -->
+<a href="https://www.sc.senac.br/cursotecnico/">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/curso-tecnico.png" width="200">
+</div>
+</a>
+
+<!-- Quinta foto -->
+<a href="https://vestibular.sc.senac.br/">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/faculdade.png" width="200">
+</div>
+</a>
+
+<!-- Quinta foto -->
+<a href="https://portal.sc.senac.br/portal/cursos/posgraduacao">
+<div class="text-bg-dark">
+    <img src="https://portal.sc.senac.br/portal/novo/images/areas/pos.png" width="200">
+</div>
+</a>
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+<!--Mais uma quebra linha-->
+<hr>
+
+<!-- Isso serve para espaçar os cards de cima com os de baixo -->
+<div style="margin-bottom: 40px;"></div>
+
+    <div class="text-center">
+    <img src="https://logodownload.org/wp-content/uploads/2014/10/senac-logo-4.png" width="100">
+    <p>Leia sobre nós <a href="https://portal.sc.senac.br/portal/novo/">aqui</a>.</p>
+    </div>
+
+
+
+
+
+
